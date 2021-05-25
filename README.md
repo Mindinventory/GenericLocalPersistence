@@ -50,13 +50,33 @@ import GenericLocalPersistence
 
 ### Set & Get value from KeyChain file
 
+
+#### Store password value
+
 ```python
-KeyChainManager()?.setPasscode(identifier: "com.appBundleID.password", passcode:textPassword?.text ?? "");
-let passwordValue = KeyChainManager()?.getPasscode(identifier: "com.appBundleID.password") ?? ""
+let passWordString = textPassword?.text?.data(using: .utf8, allowLossyConversion: false) ?? Data()
+let passwordStatus = KeyChainManager()?.save(key: "com.appBundleID.password", data: passWordString)
 
-KeyChainManager()?.setPasscode(identifier: "com.appBundleID.email", passcode:textUserName?.text ?? "");
-let userNameValue = KeyChainManager()?.getPasscode(identifier: "com.appBundleID.email") ?? ""
+//Retrive data
 
+if let receivedData = KeyChainManager()?.load(key: "com.appBundleID.password") {
+    let data = String(decoding: receivedData, as: UTF8.self)
+    print("result: ", data)
+}
+```
+
+#### Store username value
+```python
+
+let userNameString = textName?.text?.data(using: .utf8, allowLossyConversion: false) ?? Data()
+let emailStatus = KeyChainManager()?.save(key: "com.appBundleID.email", data: userNameString)
+
+//Retrive data
+
+if let data = KeyChainManager()?.load(key: "com.appBundleID.email") {
+    let data = String(decoding: data, as: UTF8.self)
+    print("result: ", data)
+}
 ```
 
 ## NOTE
