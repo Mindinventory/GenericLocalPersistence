@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "GenericLocalPersistence"
-  spec.version      = "1.0.0"
+  spec.version      = "0.0.1"
   spec.summary      = "A cocoaPod library written in swift."
   spec.description  = "A cocoaPod library written in swift for local Persistence."
 
