@@ -1,6 +1,6 @@
 # GenericLocalPersistence
 
-GenericLocalPersistence is a clean and easy-to-use code which is useful for integrating local storages like UserDefaults, plist and Keychain.
+GenericLocalPersistence is a clean and easy-to-use code that is useful for integrating local storage like UserDefaults, plist, and Keychain.
 
 ## Installation
 
@@ -54,7 +54,7 @@ let value = KeyChainManager()?.getPasscode(identifier: "com.appBundleID") ?? ""
 ## NOTE
 ```python
 Replace "com.appBundleID" with your project bundleID for KeyChain integration
-Define data Type in which you want to fetch the value and that’s way you can get the stored value.
+Define the dataType in which you want to fetch the value and that’s the way you can get the stored value.
 ```
 
 
