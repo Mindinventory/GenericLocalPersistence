@@ -51,8 +51,12 @@ import GenericLocalPersistence
 ### Set & Get value from KeyChain file
 
 ```python
-KeyChainManager()?.setPasscode(identifier: "com.appBundleID", passcode:textPassword?.text ?? "");
-let value = KeyChainManager()?.getPasscode(identifier: "com.appBundleID") ?? ""
+KeyChainManager()?.setPasscode(identifier: "com.appBundleID.password", passcode:textPassword?.text ?? "");
+let passwordValue = KeyChainManager()?.getPasscode(identifier: "com.appBundleID.password") ?? ""
+
+KeyChainManager()?.setPasscode(identifier: "com.appBundleID.email", passcode:textUserName?.text ?? "");
+let userNameValue = KeyChainManager()?.getPasscode(identifier: "com.appBundleID.email") ?? ""
+
 ```
 
 ## NOTE
