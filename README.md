@@ -21,7 +21,7 @@ import GenericLocalPersistence
 ### Set & Get value from User Default
 
 ```python
-DefaultManager().saveValueInDefault.saveValueInDefault(value: "TestValue", using: "TestKey")
+DefaultManager().saveValueInDefault(value: "TestValue", using: "TestKey")
 let valueFetch:String = DefaultManager().getValue("TestKey") ?? ""
 ```
 
