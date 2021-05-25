@@ -8,34 +8,55 @@ From CocoaPods
 First, add the following line to your Podfile 
 
 ```bash
-pod install 'iOSGenricPods', '~> 1.0.0’
+pod install 'GenericLocalPersistence', '~> 0.0.1’
 
-pod 'iOSGenricPods', :git => 'https://cocoapods.org/pods/iOSGenricPods'
-
-
+pod 'GenericLocalPersistence', :git => 'https://github.com/Riddhi-mi/GenericLocalPersistence.git'
 ```
 
-## Usage
+
+# Usage of UserDefault
+
+import GenericLocalPersistence
+
+### Set & Get value from User Default
 
 ```python
-import iOSGenricPods
-
-
-## User differnt methods for different storages like default, plist or keychain 
-
-defaultManager().saveValueInDefault.saveValueInDefault(value: "TestValue", using: "TestKey")
-
-# The same way you can get the value by using the object manager
-
-let valueFetch:String = manager.getValue("TestKey")
-
-
-## Define type data Type in which you want to fetch the value and that’s way you can get the stored value.
-
-
-## FOLLOW THE SAME STEPS TO ACCESS  THE METHODS FOR STORING AND RETRIEVING DATA FROM THE KEYCHAIN AND PLIST
-
+DefaultManager().saveValueInDefault.saveValueInDefault(value: "TestValue", using: "TestKey")
+let valueFetch:String = DefaultManager().getValue("TestKey") ?? ""
 ```
+
+# Usage of Plist
+
+import GenericLocalPersistence
+
+### Set & Get value from plist file
+
+```python
+private let managerPlist = plistManager(named: "userDetails")
+```
+
+```python
+managerPlist?.saveDatatoPlist(value: "TestString Value", using: "TestKey")
+let stringValue :String = managerPlist?.getDictionary(key: "TestKey") ?? ""
+```
+
+## Usage of KeyChain
+import GenericLocalPersistence
+
+### Set & Get value from plist file
+
+```python
+KeyChainManager()?.setPasscode(identifier: "com.appBundleID", passcode:textPassword?.text ?? "");
+let value = KeyChainManager()?.getPasscode(identifier: "com.appBundleID")
+```
+
+## NOTE
+```python
+Replace "com.appBundleID" with your project bundleID for KeyChain integration
+Define data Type in which you want to fetch the value and that’s way you can get the stored value.
+```
+
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
