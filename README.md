@@ -47,7 +47,7 @@ import GenericLocalPersistence
 
 ```python
 KeyChainManager()?.setPasscode(identifier: "com.appBundleID", passcode:textPassword?.text ?? "");
-let value = KeyChainManager()?.getPasscode(identifier: "com.appBundleID")
+let value = KeyChainManager()?.getPasscode(identifier: "com.appBundleID") ?? ""
 ```
 
 ## NOTE
