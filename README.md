@@ -30,6 +30,7 @@ let valueFetch:String = DefaultManager().getValue("TestKey") ?? ""
 import GenericLocalPersistence
 
 ### Set & Get value from plist file
+Replace "userDetails" with custom name for creating plist file to store data 
 
 ```python
 private let managerPlist = plistManager(named: "userDetails")
@@ -43,7 +44,7 @@ let stringValue :String = managerPlist?.getDictionary(key: "TestKey") ?? ""
 ## Usage of KeyChain
 import GenericLocalPersistence
 
-### Set & Get value from plist file
+### Set & Get value from KeyChain file
 
 ```python
 KeyChainManager()?.setPasscode(identifier: "com.appBundleID", passcode:textPassword?.text ?? "");
