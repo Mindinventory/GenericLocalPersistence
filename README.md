@@ -1,6 +1,10 @@
 # GenericLocalPersistence
 
-GenericLocalPersistence is a clean and easy-to-use code that is useful for integrating local storage like UserDefaults, plist, and Keychain.
+GenericLocalPersistence is a clean and easy-to-use code that is useful for integrating local storage like, 
+
+* UserDefaults
+* plist
+* Keychain
 
 ## Installation
 
