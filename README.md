@@ -6,6 +6,8 @@ GenericLocalPersistence is a clean and easy-to-use code that is useful for integ
 * **PList**
 * **Keychain**
 
+Read more from [MEDIUM](https://medium.com/mindful-engineering/generic-local-persistence-8b4cfa5dbf7d)
+
 ## Installation
 
 From CocoaPods
